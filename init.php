@@ -5,18 +5,14 @@ class article_toolbar_small extends Plugin {
 
 	function about() {
 		return array(1.1,
-			"Small Toolbar for easy access to feed functions",
-			"idoxlr8", false);
+			"Small toolbar for easy access to previous/next articles",
+			"shrick", false);
 	}
 
 	function init($host) {
 		$this->host = $host;
 
 		$host->add_hook($host::HOOK_TOOLBAR_BUTTON, $this);
-	}
-
-	function get_js() {
-		return file_get_contents(dirname(__FILE__) . "/toolbar.js");
 	}
 
 	function HOOK_TOOLBAR_BUTTON() {
